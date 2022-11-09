@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FirstChild from "./FirstChild";
+import React from "react";
 
 function App() {
+  const [propValue, setPropValue] = React.useState(
+    "State из родительского компонента"
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Родительский компонент откуда "рождается": {propValue}
+      <FirstChild propValue={propValue} />
     </div>
   );
 }

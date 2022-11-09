@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Пример использования react props
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Для чего нужен Props?
 
-## Available Scripts
+По замыслу приложения React должны быть составными. То есть состояить из частей компонентов. Это нужно, чтобы в коде было легче ориентироваться и работать при отладке.  
+При разбивке приложения на компоненты у нас так же появляется потребность в том, чтобы каждый компонент имел возможность получать состояние из родительского компонента. Для этого существует Props. С его помощью мы передаем состояние между компонентами.
 
-In the project directory, you can run:
+Сначала необходимо, из родительского компонента , передать наш стейт в дочерний:  
+![alt text](/public/images/props1.jpg)
 
-### `npm start`
+затем в самом компоненте получить его при помощи ключего слова пропс и использовать:
+![alt text](/public/images/props2.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+или получить при помощи фигурных скобок (ключевое слово props при таком методе передачи в компонентах не исользуется):
+![alt text](/public/images/props3.jpg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Часто возникающие ошибки:
 
-### `npm test`
+При вложенности более одного компонента, можно пропустить передачу значений. Для этого можно использовать React Components - приложение для отладки и проверять в нем наличие на всех компонентах передаваемого значения. Так же передача с большой вложенностью это не самое лучшее решение, потому что могут существовать компоненты, для которых передаваемые значения не требуются. В этом случае лучше использовать HOC useContext.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Синтаксические ошибки. Передача состояние производится через фигурные скобки. Название должно описывать действие или скопировано с названия стейта.
